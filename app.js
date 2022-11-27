@@ -1,4 +1,5 @@
 const { Input, AutoComplete } = require('enquirer');
+require('dotenv').config();
 
 const askName = new Input({
     name: 'question',
@@ -14,7 +15,7 @@ const run = async () => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            api_key: '4zTC9vE5qbUgGUqJ7baAFMMRCz7eQixp',
+            api_key: process.env.API,
             'query': question,
             'uuid': "1",
         })
